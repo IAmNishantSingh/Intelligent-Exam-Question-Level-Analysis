@@ -1,7 +1,7 @@
 streamlit
 joblib
-pandas
+pandas==2.3.3
 numpy
 scipy
-scikit-learn
+scikit-learn==1.6.1
 xgboost
