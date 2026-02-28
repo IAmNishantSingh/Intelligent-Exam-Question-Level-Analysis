@@ -1,0 +1,8 @@
+*.pkl
+!artifacts/*.pkl
+test_xg.py
+optimized_exam_data.csv
+authentic_exam_data.csv
+__pycache__/
+*.ipynb_checkpoints/
+.env
