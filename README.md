@@ -18,7 +18,7 @@ graph LR
     C --> D[Feature Engineering]
     D -->|TF-IDF Vectorization| E[Sparse Matrix]
     D -->|Statistical Features| E
-    E --> F[XGBoost Ensemble Model]
+    E --> F[Logistic Regression]
     F --> G((Prediction Output))
     G -->|Easy/Medium/Hard| H[Streamlit UI]
     style F fill:#f9f,stroke:#333,stroke-width:2px
