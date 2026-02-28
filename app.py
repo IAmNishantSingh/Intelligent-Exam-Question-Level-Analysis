@@ -26,6 +26,7 @@ st.markdown("""
     .stTextArea textarea {
         background-color: #ffffff !important;
         color: #1f2937 !important;
+        caret-color: #1f2937 !important; /* Forces the cursor to be dark/visible */
         border-radius: 12px;
         border: 2px solid #e0e0e0;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
