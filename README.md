@@ -86,7 +86,7 @@ Project report preparation.*
 * **Atanu Adhakri [2401010111]** - *Synthetic Dataset Creation, Data Preprocessing, TF-IDF, Model Training, and Streamlit web application
 development*
 * **Sambhav Kumar [2401010409]** - *PPT, Data Preprocessing, testing, and project report preparation.*
-* **Prince Singh [2401010353]** - *Exploratory Data Analysis, Feature optimization, testing, and  project report preparation.*
+* **Prince Singh [2401010353]** - *Exploratory Data Analysis, Feature optimization, and testing*
 
 ---
 
