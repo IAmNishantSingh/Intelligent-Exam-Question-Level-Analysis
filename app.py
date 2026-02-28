@@ -6,14 +6,12 @@ import re
 from scipy.sparse import hstack
 import os
 
-# Configure the page
 st.set_page_config(
     page_title="Intelligent Exam Question Analyzer", 
     page_icon="🎓", 
     layout="centered"
 )
 
-# Custom CSS for a premium design
 st.markdown("""
 <style>
     /* Styling the main container */
@@ -26,13 +24,15 @@ st.markdown("""
     .stTextArea textarea {
         background-color: #ffffff !important;
         color: #1f2937 !important;
-        caret-color: #1f2937 !important; /* Forces the cursor to be dark/visible */
         border-radius: 12px;
         border: 2px solid #e0e0e0;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         font-size: 16px;
         padding: 15px;
         transition: all 0.3s ease;
+                cursor: text;
+        caret-color: #1f2937 !important;
+
     }
     .stTextArea textarea::placeholder {
         color: #a0aec0 !important;
@@ -123,7 +123,6 @@ def clean_text(text):
     text = re.sub(r'[^\w\s]', '', text) 
     return text
 
-# Header Section
 st.markdown("<h1>🎓 Question Difficulty Analyzer</h1>", unsafe_allow_html=True)
 st.markdown("<p class='subtitle'>Powered by Classical Machine Learning</p>", unsafe_allow_html=True)
 
@@ -132,7 +131,6 @@ vectorizer, scaler, label_encoder, best_model = load_artifacts()
 if best_model is None:
     st.error("Model artifacts not found. Please ensure that the 'artifacts' folder exists with vectorizer.pkl, scaler.pkl, label_encoder.pkl, and best_model.pkl.")
 else:
-    # Input area
     question = st.text_area(
         "", 
         height=160, 
@@ -144,32 +142,26 @@ else:
             st.warning("⚠️ Please enter a question to analyze.")
         else:
             with st.spinner("Analyzing complexity and patterns..."):
-                # 1. Preprocessing
                 cleaned_text = clean_text(question)
                 word_count = len(cleaned_text.split())
                 char_length = len(cleaned_text)
                 
-                # 2. Feature engineering
                 X_text_tfidf = vectorizer.transform([cleaned_text])
                 X_num_scaled = scaler.transform([[word_count, char_length]])
                 X_final = hstack([X_text_tfidf, X_num_scaled])
                 
-                # 3. Prediction
                 pred_idx = best_model.predict(X_final)[0]
                 difficulty = label_encoder.inverse_transform([pred_idx])[0]
                 
-                # 4. Probabilities (if model supports predict_proba)
                 conf_text = ""
                 if hasattr(best_model, "predict_proba"):
                     probs = best_model.predict_proba(X_final)[0]
                     confidence = np.max(probs) * 100
                     conf_text = f"Confidence Score: {confidence:.1f}%"
                 
-                # Map formatting
                 emoji_map = {"Easy": "🟢", "Medium": "🟠", "Hard": "🔴"}
                 emoji = emoji_map.get(difficulty, "⚪")
                 
-                # 5. Display Result
                 st.markdown(f"""
                 <div class="result-widget">
                     <p style="color: #718096; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Predicted Difficulty</p>
@@ -178,7 +170,6 @@ else:
                 </div>
                 """, unsafe_allow_html=True)
                 
-                # Additional Stats
                 st.markdown("### 📊 Text Statistics")
                 col1, col2 = st.columns(2)
                 
