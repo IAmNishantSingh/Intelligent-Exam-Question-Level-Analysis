@@ -4,7 +4,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-red.svg)
 ![Ensemble](https://img.shields.io/badge/XGBoost-%26%20Sklearn-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Accuracy](https://img.shields.io/badge/Accuracy-71%25-(Champion)-success)
+![Accuracy](https://img.shields.io/badge/Accuracy-71%25_%28Champion%29-success.svg)
 
 ## Executive Summary
 Traditional exam question formulation relies heavily on manual assessment, which is highly subjective, time-consuming, and prone to significant scaling limitations. The **Intelligent Exam Question Analyzer** shifts the paradigm from manual review to AI-driven evaluation. By leveraging Classical Machine Learning techniques on rich textual and statistical abstractions, this system instantaneously predicts the cognitive difficulty (Easy, Medium, Hard) of any given exam question, ensuring consistent and standardized assessments across diverse academic domains.
@@ -80,10 +80,6 @@ The core prediction engine evaluates the textual complexity through heavily engi
 While the current operational pipeline excels at static text classification, the architectural roadmap includes deep integrations with advanced Large Language Models (LLMs) like GPT-4. This strategic expansion will evolve the system from merely *analyzing* the cognitive difficulty of existing prompts to autonomously *generating* mathematically sound and domain-specific questions perfectly calibrated to requested difficulty distributions.
 
 ## Team Structure & Contributors
-
-The project benefited from collaborative effort across multiple domains:
-
-**Table 3: Team member contributions**
 
 | Team Member | Contributions |
 | :--- | :--- |
