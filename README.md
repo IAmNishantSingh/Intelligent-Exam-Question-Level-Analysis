@@ -81,12 +81,16 @@ While the current operational pipeline excels at static text classification, the
 
 ## Team Structure & Contributors
 
-* **Nishant Ranjan Singh [2401010301]** - *GitHub repository management, Data preprocessing, Streamlit web application development, and
-Project report preparation.*
-* **Atanu Adhakri [2401010111]** - *Synthetic Dataset Creation, Data Preprocessing, TF-IDF, Model Training, and Streamlit web application
-development*
-* **Sambhav Kumar [2401010409]** - *PPT, Data Preprocessing, testing, and project report preparation.*
-* **Prince Singh [2401010353]** - *Exploratory Data Analysis, Feature optimization, and testing*
+The project benefited from collaborative effort across multiple domains:
+
+**Table 3: Team member contributions**
+
+| Team Member | Contributions |
+| :--- | :--- |
+| **Nishant Ranjan Singh [2401010301]** | GitHub repository management, Data preprocessing, Streamlit web application development, Project report preparation |
+| **Atanu Adhikari [2401010111]** | Synthetic dataset creation, Data preprocessing, TF-IDF implementation, Model training, Streamlit web application development |
+| **Sambhav Kumar [2401010409]** | Presentation development, Data preprocessing, System testing, Project report preparation |
+| **Prince Singh [2401010353]** | Exploratory data analysis, Feature optimization, System testing |
 
 ---
 
