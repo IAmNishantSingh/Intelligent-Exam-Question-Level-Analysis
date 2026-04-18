@@ -3,7 +3,7 @@ joblib
 pandas==2.3.3
 numpy
 scipy
-scikit-learn==1.4.2
+scikit-learn==1.8.0
 xgboost
 protobuf<=3.20.3
 python-dotenv
