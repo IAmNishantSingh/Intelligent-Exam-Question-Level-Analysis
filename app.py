@@ -122,7 +122,7 @@ st.markdown("""
 
   .card-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -165,7 +165,8 @@ st.markdown("""
     border: 1px solid rgba(77,157,224,0.25);
     border-radius: 6px;
     padding: 1rem 1.2rem;
-    font-size: 0.82rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.88rem;
     color: #8b949e;
     line-height: 1.7;
   }
@@ -197,7 +198,7 @@ st.markdown("""
     border-color: var(--accent-gold) !important;
     box-shadow: 0 0 0 1px rgba(212,168,83,0.3) !important;
   }
-  .stButton button {
+  .stButton button, .stDownloadButton button {
     background: var(--accent-gold) !important;
     color: #0d1117 !important;
     font-weight: 700 !important;
@@ -208,7 +209,7 @@ st.markdown("""
     font-size: 0.9rem !important;
     transition: all 0.2s !important;
   }
-  .stButton button:hover {
+  .stButton button:hover, .stDownloadButton button:hover {
     background: #e0b96a !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(212,168,83,0.3) !important;
@@ -601,32 +602,52 @@ DISCLAIMER: (educational and ethical notices about this assessment)
                     ])
 
                     with r_tab1:
-                        st.markdown("""<div class="result-card">
-                        <div class="card-label gold">● Assessment Quality Summary</div>""",
-                        unsafe_allow_html=True)
-                        st.markdown(result["summary"])
-                        st.markdown("</div>", unsafe_allow_html=True)
+                        st.markdown(f"""
+<div class="result-card">
+  <div class="card-label gold">● Assessment Quality Summary</div>
+  <div style="margin-top: 1rem; color: var(--text-main); font-size: 1.05rem; line-height: 1.6;">
+
+{result['summary']}
+
+  </div>
+</div>
+                        """, unsafe_allow_html=True)
 
                     with r_tab2:
-                        st.markdown("""<div class="result-card">
-                        <div class="card-label rose">● Identified Learning Gaps</div>""",
-                        unsafe_allow_html=True)
-                        st.markdown(result["gaps"])
-                        st.markdown("</div>", unsafe_allow_html=True)
+                        st.markdown(f"""
+<div class="result-card">
+  <div class="card-label rose">● Identified Learning Gaps</div>
+  <div style="margin-top: 1rem; color: var(--text-main); font-size: 1.05rem; line-height: 1.6;">
+
+{result['gaps']}
+
+  </div>
+</div>
+                        """, unsafe_allow_html=True)
 
                     with r_tab3:
-                        st.markdown("""<div class="result-card">
-                        <div class="card-label teal">● Improvement Recommendations</div>""",
-                        unsafe_allow_html=True)
-                        st.markdown(result["advice"])
-                        st.markdown("</div>", unsafe_allow_html=True)
+                        st.markdown(f"""
+<div class="result-card">
+  <div class="card-label teal">● Improvement Recommendations</div>
+  <div style="margin-top: 1rem; color: var(--text-main); font-size: 1.05rem; line-height: 1.6;">
+
+{result['advice']}
+
+  </div>
+</div>
+                        """, unsafe_allow_html=True)
 
                     with r_tab4:
-                        st.markdown("""<div class="result-card">
-                        <div class="card-label blue">● Pedagogical References</div>""",
-                        unsafe_allow_html=True)
-                        st.markdown(result["refs"])
-                        st.markdown("</div>", unsafe_allow_html=True)
+                        st.markdown(f"""
+<div class="result-card">
+  <div class="card-label blue">● Pedagogical References</div>
+  <div style="margin-top: 1rem; color: var(--text-main); font-size: 1.05rem; line-height: 1.6;">
+
+{result['refs']}
+
+  </div>
+</div>
+                        """, unsafe_allow_html=True)
 
                     with r_tab5:
                         st.markdown(f"""
