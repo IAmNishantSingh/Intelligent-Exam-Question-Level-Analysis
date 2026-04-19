@@ -373,6 +373,14 @@ Intelligent-Exam-Question-Level-Analysis/
 ├── Dataset/
 │   └── raw_exam_data.csv           # Primary training corpus (6,200 rows)
 │
+├── pedagogy_knowledge_base/        # Source documents for ChromaDB RAG
+│   ├── Assessment-Guide-February-2025.pdf
+│   └── revised-blooms-taxonomy-action-verbs.pdf
+│
+├── Report /                        # Documentation and technical reports
+│   ├── Intelligent_Exam_Question_Level_Analysis_Report.pdf
+│   └── Intelligent_Exam_Question_Level_Analysis_Report.tex
+│
 ├── milestone1.ipynb                # M1: EDA, feature engineering, model training
 ├── milestone2_agent.ipynb          # M2: RAG ingestion, LangGraph agent build
 │
@@ -460,10 +468,10 @@ Obtain a free Groq API key at [console.groq.com](https://console.groq.com). The 
 
 | Team Member | Enrollment No. | M1 Contributions | M2 Contributions |
 | :--- | :--- | :--- | :--- |
-| **Nishant Ranjan Singh** | 2401010301 | Repository management, system integration, Streamlit UI/UX | LangGraph orchestration, cloud deployment, LaTeX report |
-| **Atanu Adhikari** | 2401010111 | Synthetic dataset creation, TF-IDF, SMOTE, hyperparameter tuning | ChromaDB RAG foundation, PDF ingestion pipeline |
-| **Sambhav Kumar** | 2401010409 | Presentation design, QA on preprocessing, abstract writing | Agentic workflow validation, end-to-end system testing |
-| **Prince Singh** | 2401010353 | EDA, bigram feature optimisation, word-count correlations | Agent output quality testing, pedagogical reference verification |
+| **Nishant Ranjan Singh** | 2401010301 | Repository management, system integration, Streamlit UI/UX. | ChromaDB RAG foundation, Cloud deployment, LaTeX report, end-to-end system testing. |
+| **Atanu Adhikari** | 2401010111 | Synthetic dataset creation, TF-IDF, SMOTE, hyperparameter tuning. | LangGraph orchestration, ChromaDB RAG foundation, PDF ingestion pipeline. |
+| **Sambhav Kumar** | 2401010409 | Presentation development, QA on preprocessing, abstract writing. | Agentic workflow validation, end-to-end system testing. |
+| **Prince Singh** | 2401010353 | EDA, bigram feature optimisation, word-count correlations. | Agent output quality testing, pedagogical reference verification. |
 
 ---
 
