@@ -46,7 +46,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── Custom CSS (teammate's dark academic UI) ──
+#── Custom CSS (teammate's dark academic UI) ──
 st.markdown("""
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
@@ -457,9 +457,30 @@ with tab2:
     def llm_analyser_node(state: AssessmentState) -> AssessmentState:
         context   = "\n\n".join(state["retrieved_docs"])
         questions = "\n".join([f"{i+1}. {q}" for i, q in enumerate(state["exam_questions"])])
+        
+        # ── M1 Predictor Integration ──
+        combined_q = " ".join(state["exam_questions"])
+        cleaned_q  = clean_text(combined_q)
+        word_count = len(cleaned_q.split())
+        char_len   = len(cleaned_q)
+        
+        try:
+            tfidf_features = vectorizer.transform([cleaned_q])
+            num_features   = scaler.transform([[word_count, char_len]])
+            X              = hstack([tfidf_features, sp.csr_matrix(num_features)])
+            difficulty     = label_encoder.inverse_transform(model.predict(X))[0]
+        except Exception:
+            difficulty     = "Unknown (M1 model not loaded)"
+
         prompt    = f"""
 You are an expert educational assessment designer.
 Using the pedagogy guidelines below, analyse the given exam questions.
+
+If the retrieved context is insufficient or irrelevant, 
+explicitly state that in your GAPS section rather than 
+hallucinating information.
+
+ML Model predicted difficulty: {difficulty}
 
 PEDAGOGY GUIDELINES:
 {context}
